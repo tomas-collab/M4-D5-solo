@@ -5,6 +5,7 @@ import Loading from "./Loading";
 
 
 
+
 class Movie extends Component{ 
     state = {
         movieData: [], 
@@ -41,9 +42,11 @@ class Movie extends Component{
                     { isError   && <Error   />}
                      {
                          movieData.map( movie=>
+                            <>
                                 <MoviesSingle allMovies={movie}/>
-
-                           )
+                                
+                              </>
+                           ) 
                      }
                 
              </>

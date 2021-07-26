@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Carousel from 'react-elastic-carousel'
 import Movie from './components/Movie'
