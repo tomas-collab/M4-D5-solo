@@ -1,9 +1,13 @@
 import { Component } from "react";
+import CommentForm from "./CommentForm";
 
 
 class CommentList extends Component{
     state={
         comment:[]
+    }
+    onAddComment=(addComment)=>{
+        this.setState({comment:[...this.state.comment,addComment]})
     }
     componentDidMount= async()=>{
         console.log(this.props)
@@ -20,14 +24,19 @@ class CommentList extends Component{
     }
     render(){
         return(
-            
-            this.state.comment.map(comm=> 
-                <p>
-               { comm.comment}
-               </p>
-               
-           
-            )
+            <>
+            <ul>
+                {
+               this.state.comment.map(comm=> 
+                    <p>
+                   { comm.comment + '-  rate-:' + comm.rate}              
+                   </p>
+                )
+                }
+            </ul>
+            <p>Add Comment Below</p>
+            <CommentForm onAddComment={this.onAddComment} imdbID={this.props.imdbID}/>
+            </>
             
         )
     }

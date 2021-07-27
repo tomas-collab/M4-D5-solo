@@ -22,14 +22,14 @@ const MoviesSingle =({allMovies})=>{
                             placement='bottom'
                             overlay={
                                 <Popover id='popover-positioned-bottom'>                                       
-                                <Popover.Content>                   
-                                <CommentList imdbID={ imdbID } />
-                                 <CommentForm/>
+                                <Popover.Content> 
+                                    <p> previous Comments:</p>                                                   
+                                 <CommentList imdbID={ imdbID } />                  
                                 </Popover.Content>
                                 </Popover>
                             }
                             >
-                            <Button variant="secondary">Popover on bottom</Button>
+                            <Button variant="secondary">See comments</Button>
                 </OverlayTrigger>
                
             </div>
