@@ -11,10 +11,10 @@ function App() {
       <Navigation />
       <h4>Trending Now</h4>
       <Carousel>
-        <Movie movieData="Spider man"/>
-        <Movie movieData="Spider man"/>
-        <Movie movieData="Spider man"/>
-        <Movie movieData="Spider man"/>
+        <Movie movieData="Star wars"/>
+        <Movie movieData="Star wars"/>
+        <Movie movieData="Star wars"/>
+        <Movie movieData="Star wars"/>
       </Carousel>
       <h4>Watch It Again</h4>
       <Carousel>
