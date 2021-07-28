@@ -90,3 +90,32 @@ h4{
 .list-group{
   list-style: none;
 }
+.me-auto{
+  display: flex;
+    flex: 1;
+}
+.comment-text{
+  background-color: rgb(98, 69, 105) !important;
+  color: white;
+}
+.netflix{
+  position: relative;
+  right: 26px;
+  color: red;
+  font-weight: 600;
+}
+#navbar{
+  background-color: #161616 !important;
+}
+.movie-title{
+  color: white;
+  text-overflow: ellipsis;
+  width: 188px;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: black;
+}
+.button{
+  background-color: black;
+  border: none;
+}

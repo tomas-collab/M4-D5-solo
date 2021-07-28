@@ -9,7 +9,7 @@ import { Component } from 'react';
 
 class App extends Component {
 state = {
-  search:''
+  search:'home'
 }
 onSearchMovie=(e)=>{
    this.setState({search:e.target.value})

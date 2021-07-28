@@ -1,6 +1,7 @@
 
 import { Component } from "react"
-import { FormControl,Button } from "react-bootstrap"
+import { FormControl,Button ,Form} from "react-bootstrap"
+import {AiFillStar} from 'react-icons/ai'
 
 class CommentForm extends Component{
     state={
@@ -10,21 +11,34 @@ class CommentForm extends Component{
 render(){
     return(
                 <div>
-                <FormControl
+                {/* <FormControl
+               
                 value={this.state.rate}
                 type='number'
                 onChange={(e)=>this.setState({rate:e.currentTarget.value.toLowerCase()})}    
                 placeholder="rate"       
                     >
                     
-                </FormControl>
+                </FormControl> */}
+                <select
+
+                        value={this.state.rate}
+                        onClick={(e)=>this.setState({rate:e.currentTarget.value})}    
+                      
+                  aria-label="Default select example">
+                    <option>Open this select menu</option>
+                    <option value={<AiFillStar/>}><AiFillStar/></option>
+                    <option value="2"><AiFillStar/><AiFillStar/></option>
+                    <option value="3"><AiFillStar/><AiFillStar/><AiFillStar/></option>
+                </select>
                 <FormControl 
+               
                     value={this.state.comment}
                     onChange={(e)=>this.setState({comment:e.currentTarget.value.toLowerCase()})}
                     placeholder='comment'
                 >
                 </FormControl>  
-                <Button onClick={this.addComment}>Add Comment</Button>
+                <Button variant='success' onClick={this.addComment}>Add Comment</Button>
             </div>
     )
 }

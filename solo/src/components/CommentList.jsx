@@ -1,5 +1,6 @@
 import { Component } from "react";
 import CommentForm from "./CommentForm";
+import {AiFillStar} from 'react-icons/ai'
 
 
 class CommentList extends Component{
@@ -28,13 +29,15 @@ class CommentList extends Component{
             <ul>
                 {
                this.state.comment.map(comm=> 
-                    <p>
-                   { comm.comment + '-  rate-:' + comm.rate}              
+                    <p className='comment-text'>
+                       
+                   {<a className='d-block' href="">{comm.comment}</a> } 
+                   {<a href=""><AiFillStar/>{comm.rate}</a> }            
                    </p>
                 )
                 }
             </ul>
-            <p>Add Comment Below</p>
+            <p className='text-white'>Add Comment Below</p>
             <CommentForm onAddComment={this.onAddComment} imdbID={this.props.imdbID}/>
             </>
             

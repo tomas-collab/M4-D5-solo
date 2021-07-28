@@ -15,21 +15,22 @@ const MoviesSingle =({allMovies})=>{
             <div  className='ml-2' >
                 <img src={Poster}
                 style={{height:200, width:200}}/>
-                <h6 className='text-white'>{Title}</h6>
+               
             <OverlayTrigger
+            className='comment-text'
                             trigger="click"
                             key='bottom'
                             placement='bottom'
                             overlay={
-                                <Popover id='popover-positioned-bottom'>                                       
+                                <Popover className='comment-text' id='popover-positioned-bottom'>                                       
                                 <Popover.Content> 
-                                    <p> previous Comments:</p>                                                   
+                                    <p className='text-white'> previous Comments:</p>                                                   
                                  <CommentList imdbID={ imdbID } />                  
                                 </Popover.Content>
                                 </Popover>
                             }
                             >
-                            <button className='dark'>See comments</button>
+                            <button className='button'> <h6 className='movie-title'>{Title}</h6></button>
                 </OverlayTrigger>
                
             </div>
