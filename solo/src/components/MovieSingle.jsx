@@ -29,7 +29,7 @@ const MoviesSingle =({allMovies})=>{
                                 </Popover>
                             }
                             >
-                            <Button variant="secondary">See comments</Button>
+                            <button className='dark'>See comments</button>
                 </OverlayTrigger>
                
             </div>

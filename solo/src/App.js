@@ -5,22 +5,20 @@ import Movie from './components/Movie'
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
 import { Component } from 'react';
-import {FormControl} from 'react-bootstrap'
+
 
 class App extends Component {
 state = {
-  search:'home'
+  search:''
+}
+onSearchMovie=(e)=>{
+   this.setState({search:e.target.value})
 }
 render(){
   return (
     <div className="App">
-      <Navigation
+      <Navigation onSearchMovie={this.onSearchMovie} search={this.state.search}
       />
-       <FormControl
-        value={this.state.search}
-        placeholder='search'
-        onInput={(e)=>this.setState({search:e.target.value})}
-    />
       <h4>Trending Now</h4>
       <Carousel>
         <Movie movieData={this.state.search}/>

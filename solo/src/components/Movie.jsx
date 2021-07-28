@@ -16,7 +16,7 @@ class Movie extends Component{
     }
 
     componentDidUpdate= async (prevProps)=>{
-        if(this.props.movieData && (!prevProps.movieData !== this.props.movieData)){
+        if(this.props.movieData!== prevProps.movieData){
             try {
                 let response = await fetch('http://www.omdbapi.com/?apikey=27d75181&s=' + this.props.movieData,  )
                 if (response.ok) {
@@ -67,7 +67,7 @@ class Movie extends Component{
                     { isLoading && <Loading />}
                     { isError   && <Error   />}
                      {
-                         movieData.map(movie=>
+                        movieData && movieData.map(movie=>
                             <>
                                 <MoviesSingle allMovies={movie}/>
                                 
