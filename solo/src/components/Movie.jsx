@@ -2,6 +2,7 @@ import { Component } from "react";
 import MoviesSingle from "./MovieSingle";
 import Error from "./Error";
 import Loading from "./Loading";
+import {Row,Col} from 'react-bootstrap'
 
 
 
@@ -69,7 +70,11 @@ class Movie extends Component{
                      {
                         movieData && movieData.map(movie=>
                             <>
-                                <MoviesSingle allMovies={movie}/>
+                              <Row>
+                                  <Col sm={12} md={3} lg={2}>
+                                      <MoviesSingle allMovies={movie}/>
+                                  </Col>
+                              </Row>
                                 
                               </>
                            ) 
