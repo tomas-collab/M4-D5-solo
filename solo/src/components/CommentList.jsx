@@ -31,13 +31,13 @@ class CommentList extends Component{
                this.state.comment.map(comm=> 
                     <p className='comment-text'>
                        
-                   {<a className='d-block' href="">{comm.comment}</a> } 
-                   {<a href=""><AiFillStar/>{comm.rate}</a> }            
+                   {<li className='d-block mb-2'>{comm.comment}</li> } 
+                   {<li><AiFillStar/>{comm.rate}</li> }            
                    </p>
                 )
                 }
             </ul>
-            <p className='text-white'>Add Comment Below</p>
+            <p className='text-white'><strong>Add Comment Below</strong></p>
             <CommentForm onAddComment={this.onAddComment} imdbID={this.props.imdbID}/>
             </>
             
