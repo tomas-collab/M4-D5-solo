@@ -1,13 +1,19 @@
 
 import { Component } from "react"
 import { FormControl,Button ,Form} from "react-bootstrap"
-import  StartRating from 'react-star-ratings'
+import  StarRatings from 'react-star-ratings'
  
 
 class CommentForm extends Component{
     state={
         comment:[],
         rate:1
+    }
+
+    changeRating=( newRating, name ) =>{
+      this.setState({
+        rate: newRating
+      });
     }
 render(){
     return(
@@ -21,23 +27,29 @@ render(){
                     >
                     
                 </FormControl> */}
-                <StartRating
-                count={5}
-                value={this.state.rate}
-                size={30}
-                activeColor={'yellow'}
-                inactiveColor={'white'}
-                onChange={(e)=>this.setState({rate:e.target.value})}
-                    />
-               
-                <FormControl 
-                    className='mb-2'
-                    value={this.state.comment}
-                    onChange={(e)=>this.setState({comment:e.currentTarget.value.toLowerCase()})}
-                    placeholder='comment'
-                >
-                </FormControl>  
-                <Button variant='success' onClick={this.addComment}>Save</Button>
+             
+
+
+                            <StarRatings
+                                    rating={this.state.rate}
+                                    starRatedColor="yellow"
+                                    starEmptyColor='gray'
+                                    starHoverColor='yellow'
+                                    starDimension='22px'
+                                    starSpacing='0px'
+                                    changeRating={this.changeRating}
+                                    numberOfStars={5}
+                                    name='rating'
+                            />
+                        
+                            <FormControl 
+                                className='mb-2'
+                                value={this.state.comment}
+                                onChange={(e)=>this.setState({comment:e.currentTarget.value.toLowerCase()})}
+                                placeholder='comment'
+                            >
+                            </FormControl>  
+                            <Button variant='success' onClick={this.addComment}>Save</Button>
             </div>
     )
 }

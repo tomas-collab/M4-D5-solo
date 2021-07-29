@@ -1,6 +1,6 @@
 import { Component } from "react";
 import CommentForm from "./CommentForm";
-import {AiFillStar} from 'react-icons/ai'
+import StarRatings from 'react-star-ratings'
 
 
 class CommentList extends Component{
@@ -32,7 +32,16 @@ class CommentList extends Component{
                     <p className='comment-text'>
                        
                    {<li className='d-block mb-2'>{comm.comment}</li> } 
-                   {<li><AiFillStar/>{comm.rate}</li> }            
+                   {
+                       <StarRatings
+                       rating={comm.rate}
+                       starRatedColor="yellow"
+                       starEmptyColor='gray'                    
+                       starDimension='22px'
+                       starSpacing='0px'                    
+                       numberOfStars={5}
+                     
+               /> }            
                    </p>
                 )
                 }
